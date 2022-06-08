@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+	<body bgcolor="507080">
+		<h2>PRUEBAS JAVASCRIPT</h2>
+		<button onclick="myFunction()">Click me</button><br>
+		<button onclick="LeerArchXMLrq('index.html.md5')">Click para mostrar el contenido del URL con XMLHttpRequest</button><br>
+		<button onclick="LeerArchFetch('https://dweet.io/get/latest/dweet/for/Monitor_S335')">Click para mostrar el contenido del URL con fetch</button><br>
+		<p id="Debug"></p>
+	</body>
+	<script type="text/javascript">  
+
+	function Timer(Tiempo_mS) 
+	{  		
+		setInterval(function () {LeerArch()}, Tiempo_mS);	// Actualizar el mapa cada pocos segundos
+	}
+	
+	function myFunction() {
+		document.getElementById("Debug").innerHTML = "Hello World";
+		console.log("Hello");
+	}
+
+	function LeerArchXMLrq(Arch) 
+	{
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				document.getElementById("Debug").innerHTML = Arch + " : " + this.responseText;
+			}
+		};
+		xhttp.open("GET", Arch, true);
+		xhttp.send();
+	}
+
+	function LeerArchFetch(Arch) 
+	{
+		fetch(Arch)
+		.then(response => response.text())
+		.then(data => 
+		{
+		document.getElementById("Debug").innerHTML = Arch + " : " + data;
+		});
+	}
+	</script>
+</html>

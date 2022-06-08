@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    body
+      {
+      font-size: 12px;
+      color: rgb(100,160,220);
+      letter-spacing: 0px;
+      line-height: 90%;
+      white-space:pre;
+      margin-top: 10px;
+      margin-left: 10px;
+      }
+      @font-face
+        {
+        font-family: Monoespaciado;
+        src: url(VictorMono-Regular.ttf);
+        }
+      *
+        {
+        font-family: Monoespaciado;
+        }
+    </style>
+    <title>
+      Log UnimatrixZero Internet
+    </title>
+    <script type="text/javascript">
+    function Init()
+      {
+        LeerArch('index.html.tag');   // Inmediatamente leer y mostrar la hora de actualizacion
+        Monitor();                    // Cada pocos seg leer y mostrar la hora de actualizacion
+      }
+    function Monitor()
+      {
+        setInterval(function () {LeerArch('index.html.tag')}, 5000); // Actualizar el mapa cada pocos segundos
+      }
+    function LeerArch(Arch)
+      {
+        fetch(Arch)
+        .then(response => response.text())
+        .then(data =>
+        {
+          document.getElementById("Etiq").innerHTML = "Actualizado a las " + data;
+          document.getElementById("Prev").innerHTML = " (previo: " + Prev + ")";
+        });
+      }
+    </script>
+  </head>
+
+  <body bgcolor="203040" onload="Init()">
+<H2>Conexiones desde UnimatrixZero.red a api.ipify.org durante enero 2022</H2>
+ * servicio 100% activo | # servicio 100% activo y es hora en punto
+1~9 servicio activo 10% ~ 90%
+ - servicio  0%  activo | + servicio 0% activo y es hora en punto
+ . no hay registro      | , no hay registro y es hora en punto
+
+Fecha
+ |    Sextos de hora -->
+ | 0     0     0     0     0     0     0     0     0     0     1     1     1     1     1     1     1     1     1     1     2     2     2     2     
+ V 0     1     2     3     4     5     6     7     8     9     0     1     2     3     4     5     6     7     8     9     0     1     2     3     

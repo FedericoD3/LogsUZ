@@ -1,0 +1,9 @@
+UnimatrixZero:
+ *   *   *   *   * /home/pi/Scripts/LogConex/LogConex.sh api.ipify.org     /home/pi/Logs/LogConex/ _ABA.log
+
+ViejasDuran:
+ *   *   *   *   * /Discos/sda2/Scripts/LogConex.sh google.com /Discos/sda2/Logs/ _Internet.log
+ 
+AlficaP2:
+ *   *   *   *   *   /Discos/Alfica/Scripts/LogConex/LogConex.sh api64.ipify.org /Discos/Alfica/Scripts/LogConex/Logs/Internet/ _WAN1.log
+ *   *   *   *   *   /Discos/Alfica/Scripts/LogConex/LogConex.sh 192.1.1.232:42328 /Discos/Alfica/Scripts/LogConex/Logs/Elec/ _Elec.log

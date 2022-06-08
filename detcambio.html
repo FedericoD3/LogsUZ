@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<script type="text/javascript">  
+	function Monitor() 
+	{  		
+		setInterval(function () {LeerArchFetch('index.html.tag')}, 5000);	// Actualizar el mapa cada pocos segundos
+	}
+
+	function LeerArchFetch(Arch) 
+	{
+		fetch(Arch)
+		.then(response => response.text())
+		.then(data => 
+		{
+		document.getElementById("Etiq").innerHTML = "Actualizado a las " + data;
+		});
+	}
+	</script>
+	<body bgcolor="507080" onload="Monitor()">
+		<h2>MONITOR DE CAMBIO</h2>
+		<p id="Etiq"></p>
+	</body>
+</html>
